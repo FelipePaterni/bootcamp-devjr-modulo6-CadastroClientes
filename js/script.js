@@ -1,32 +1,46 @@
+$("#CEPInput").mask("00000-000");
+
 function searchCEP() {
   var CEP = document.getElementById("CEPInput");
+  var valueCEP = CEP.value.replace("-", "");
+  var url = `https://viacep.com.br/ws/${valueCEP}/json/`;
 
-  if (!CEP.value.trim()){
+  cleanForm();
+  if (!valueCEP.trim()) {
     CEP.className = "form-control";
-    return
+    
+    return;
   }
-  var url = `https://viacep.com.br/ws/${CEP.value}/json/`;
 
-  if (isValidCEP(CEP)) {
+  if (isValidCEP(valueCEP)) {
     $.getJSON(url, (data) => {
-        if(data.erro){
-         return showErro("Esse CEP não existe")
-        }
+      if (data.erro) {
+        return showErro("Esse CEP não existe");
+      }
       showCEPInfo(data);
       CEP.className = "form-control is-valid";
     }).fail(() => {
-      showErro("Esse CEP não existe")
+      showErro("Esse CEP não existe");
     });
-  }else showErro("CEP inválido. Digite 8 números.")
+  } else showErro("CEP inválido. Digite 8 números.");
 }
 
 function showCEPInfo(data) {
-  document.getElementById("EnderecoInput").value = data.logradouro;
+  document.getElementById("EnderecoInput").value = data.logradouro ;
   $("#NumeroInput").prop("disabled", false);
 
   document.getElementById("BairroInput").value = data.bairro;
   document.getElementById("CidadeInput").value = data.localidade;
   document.getElementById("EstadoInput").value = data.uf;
+}
+
+function cleanForm() {
+  document.getElementById("EnderecoInput").value = "";
+  $("#NumeroInput").prop("disabled", true);
+
+  document.getElementById("BairroInput").value = "";
+  document.getElementById("CidadeInput").value = "";
+  document.getElementById("EstadoInput").value = "";
 }
 
 function showErro(textErro) {
