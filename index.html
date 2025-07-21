@@ -12,10 +12,12 @@
     />
   </head>
   <body>
-    <main>
+    <header>
       <h4 class="my-4 text-center">Cadastro de Clientes:</h4>
+    </header>
 
-      <section class="container bg-white p-4 border rounded-1 shadow-sm">
+    <main class="container bg-white p-4 border rounded-1 shadow-sm">
+      <section>
         <form>
           <div class="row">
             <div class="col-6 mb-3">
@@ -58,20 +60,63 @@
 
             <div class="col-6 mb-3">
               <label for="BairroInput" class="form-label">Bairro:</label>
-              <input type="text" class="form-control" id="BairroInput" disabled />
+              <input
+                type="text"
+                class="form-control"
+                id="BairroInput"
+                disabled
+              />
             </div>
 
             <div class="col-6 mb-3">
               <label for="CidadeInput" class="form-label">Cidade:</label>
-              <input type="text" class="form-control" id="CidadeInput" disabled />
+              <input
+                type="text"
+                class="form-control"
+                id="CidadeInput"
+                disabled
+              />
             </div>
 
             <div class="col-2 mb-3">
               <label for="EstadoInput" class="form-label">Estado:</label>
-              <input type="text" class="form-control" id="EstadoInput" disabled />
+              <input
+                type="text"
+                class="form-control"
+                id="EstadoInput"
+                disabled
+              />
             </div>
           </div>
         </form>
+      </section>
+
+      <section class="mt-5">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome Completo</th>
+              <th scope="col">Endereço</th>
+              <th scope="col">CEP</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">Bidade</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+            </tr>
+            
+          </tbody>
+        </table>
       </section>
     </main>
 
