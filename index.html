@@ -17,7 +17,7 @@
       <h4 class="my-4 text-center">Cadastro de Clientes:</h4>
     </header>
 
-    <main class="container bg-white p-5 border rounded-1 shadow-sm">
+    <main class="container bg-white p-5 border rounded-1 shadow">
       <section>
         <form onsubmit="save(); return false;" id="formClientes">
           <div class="row">
@@ -28,7 +28,12 @@
 
             <div class="col-6 mb-3">
               <label for="SobrenomeInput" class="form-label">Sobre Nome:</label>
-              <input type="text" class="form-control" id="SobrenomeInput" />
+              <input
+                type="text"
+                class="form-control"
+                id="SobrenomeInput"
+                required
+              />
             </div>
 
             <div class="col-6 mb-3 has-validation">
@@ -56,6 +61,7 @@
                 class="form-control"
                 id="EnderecoInput"
                 disabled
+                required
               />
             </div>
 
@@ -66,6 +72,7 @@
                 class="form-control"
                 id="NumeroInput"
                 disabled
+                required
               />
             </div>
 
@@ -76,6 +83,7 @@
                 class="form-control"
                 id="BairroInput"
                 disabled
+                required
               />
             </div>
 
@@ -86,6 +94,7 @@
                 class="form-control"
                 id="CidadeInput"
                 disabled
+                required
               />
             </div>
 
@@ -96,6 +105,7 @@
                 class="form-control"
                 id="EstadoInput"
                 disabled
+                required
               />
             </div>
           </div>
@@ -118,8 +128,7 @@
               <th scope="col">Estado</th>
             </tr>
           </thead>
-          <tbody class="table-group-divider">
-           
+          <tbody class="table-group-divider"></tbody>
         </table>
       </section>
     </main>

@@ -18,6 +18,8 @@ function searchCEP() {
     $.getJSON(url, (data) => {
       if (data.erro) {
         return showErro("Esse CEP não existe");
+
+        
       }
       showCEPInfo(data);
       CEP.className = "form-control is-valid";
@@ -65,7 +67,7 @@ function save() {
     nome: `${document.getElementById("NomeInput").value} ${
       document.getElementById("SobrenomeInput").value
     }`,
-    endereco: document.getElementById("EnderecoInput").value + (document.getElementById("NumeroInput").value.trim() ? `, ${document.getElementById("NumeroInput").value.trim()}` :""),
+    endereco:`${document.getElementById("EnderecoInput").value}, ${document.getElementById("NumeroInput").value.trim()}`,
     cep: document.getElementById("CEPInput").value,
     bairro: document.getElementById("BairroInput").value,
     cidade: document.getElementById("CidadeInput").value,
